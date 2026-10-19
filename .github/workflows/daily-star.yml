@@ -2,9 +2,9 @@ name: Daily Star
 
 on:
   schedule:
-    # 北京时间每天 03:00
+    # 北京时间每天 03:00（= UTC 前一天 19:00）
     - cron: '0 19 * * *'
-  workflow_dispatch:   # 也支持在 Actions 页面手动触发
+  workflow_dispatch:   # 支持手动触发
 
 permissions:
   contents: write      # 允许 push 回仓库
@@ -24,12 +24,13 @@ jobs:
           python-version: '3.x'
 
       - name: Generate star SVG
-        run: python make_star.py
+        run: python stars/make_star.py
 
       - name: Commit & push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 因为脚本会生成在根目录，所以这里依然在根目录抓取
           git add 'star*.svg'
           if git diff --cached --quiet; then
             echo "没有新变化，跳过提交"
