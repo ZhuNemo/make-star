@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="460" viewBox="0 0 400 460">
+  <rect width="400" height="460" fill="#FFFFFF"/>
+  <polygon points="200.00,40.00 233.68,143.65 342.66,143.65 254.49,207.71 288.17,311.35 200.00,247.29 111.83,311.35 145.51,207.71 57.34,143.65 166.32,143.65" fill="#E61E3D" stroke="#8A1224"
+           stroke-width="3" stroke-linejoin="round"/>
+  <text x="200.0" y="405" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="bold"
+        fill="#8A1224">2026-10-21</text>
+</svg>
